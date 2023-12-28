@@ -118,6 +118,9 @@ def _parse(s: str | None, section: str) -> tuple[File, ...]:
         values = {}
         markers = []
         for line in body.strip().splitlines():
+            line = re.sub(r'(^|\s+)#.*', '', line)
+            if not line:
+                continue
             k, v = line.split('=', 1)
             k, v = k.strip(), v.strip()
 

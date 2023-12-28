@@ -94,19 +94,20 @@ def test_parse_trivial(s):
 def test_parse():
     src = '''\
 [f1]
-url = https://example.com/f1
+url = https://example.com/f1  # inline-comment
 sha256 = deadbeef
 [f2]
 url = https://example.com/f2.tar.gz
 sha256 = cafecafe
 extract = tar
 extract_path = release-1.0/f2
+# comment-line
 [f3.exe]
 url = https://example.com/f3.exe
 sha256 = baadbaad
 group = f3-binary
 marker = sys_platform == "cygwin"
-marker = sys_platform == "win32"
+marker = sys_platform == "win32" # marker-comment
 [f3]
 url = https://example.com/f3
 sha256 = daaddaad
