@@ -46,18 +46,18 @@ download_data_files =
 download_scripts =
     [example-tool]
     group = example-tool-binary
-    marker = sys_platform = "linux" and platform_machine = "x86_64"
+    marker = sys_platform == "linux" and platform_machine == "x86_64"
     url = https://example.com/example-tool-linux-x86-64
     sha256 = ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
     [example-tool]
     group = example-tool-binary
-    marker = sys_platform = "darwin" and platform_machine = "x86_64"
-    marker = sys_platform = "darwin" and platform_machine = "arm64"
+    marker = sys_platform == "darwin" and platform_machine == "x86_64"
+    marker = sys_platform == "darwin" and platform_machine == "arm64"
     url = https://example.com/example-tool-darwin-x86-64
     sha256 = ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
     [example-tool.exe]
     group = example-tool-binary
-    marker = sys_platform = "win32" and platform_machine = "AMD64"
+    marker = sys_platform == "win32" and platform_machine == "AMD64"
     url = https://example.com/example-tool-win32.exe
     sha256 = eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 ```
