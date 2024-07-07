@@ -211,8 +211,9 @@ def _filter(src: tuple[File, ...], section: str) -> tuple[File, ...]:
 
 
 def _download(f: File, base: str) -> None:
-    req = urllib.request.urlopen(f.url)
-    contents = req.read()
+    req = urllib.request.Request(f.url, headers={'User-Agent': __name__})
+    resp = urllib.request.urlopen(req)
+    contents = resp.read()
     got = hashlib.sha256(contents).hexdigest()
     if not secrets.compare_digest(got, f.sha256):
         raise ValueError(f'{f.path}: checksum mismatch {got=} {f.sha256=}')
