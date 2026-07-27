@@ -1,8 +1,6 @@
 build
 covdefaults
 coverage
-coverage-enable-subprocess
 ephemeral-port-reserve
 pytest
 re-assert
-wheel
