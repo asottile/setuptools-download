@@ -342,7 +342,7 @@ def test_filter_missing_file_for_group():
 
 def _sha256(f):
     with open(f, 'rb') as f:
-        return hashlib.sha256(f.read()).hexdigest()
+        return hashlib.file_digest(f, 'sha256').hexdigest()
 
 
 class Server(NamedTuple):
